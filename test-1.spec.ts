@@ -66,6 +66,7 @@ test('test', async ({ page }) => {
   await page.getByLabel('Bubble Opacity').check();
 
   //change the Tempaerature to Farenhite
+  page.waitForTimeout(5000);
 
   await page.goto('https://autonomous-hvac-cfd.simulationhub.com/public/e0Xo9YN/w3oSvmn:HGebwM2:4Tg2j2t/results/flowlines?Source=allDiffusers&colorBy=Temperature&colorSteps=16&showAnimation=true&showFlowlines=true&bubbleOpacity=true&bubbleSize=15&animationSpeed=1');
   await page.getByLabel('SpeedDial example').click();
@@ -81,3 +82,5 @@ test('test', async ({ page }) => {
   await page.getByRole('row', { name: 'Comfort' }).locator('img').click();
   await page.locator('#extras').click();
 });
+
+
